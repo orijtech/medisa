@@ -1,0 +1,96 @@
+<HTML>
+  <head>
+    <title>medisa</title>
+
+    <script>
+      var wsURL = "{{.WSURL}}";
+      // At this point they haven't visited
+      // the right route, redirect them.
+      if (wsURL.search("{" + "{") === 0) {
+        window.location = "/search";
+      }
+    </script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./lib/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./medisa.css">
+
+    <script type="text/javascript" script-name="jwplayer" src="https://content.jwplatform.com/libraries/IQ8fTd2m.js"></script>
+    <script type="text/javascript" script-name="montserrat" src="https://use.edgefonts.net/montserrat.js"></script>
+    <script type="text/javascript" src="/jquery-1.10.2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"> </style>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-96586822-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <script>
+      var addr = '{{.WSURL}}/init';
+      var initialKeyword = "{{.InitialSearchKeyword}}";
+    </script>
+
+    <!-- main.js should be loaded after that script above has ran -->
+    <script type="text/javascript" src="https://storage.googleapis.com/realsp/rsp.min.js?key={{jsonCacheInvalidatorKey}}"></script>
+    <script type="text/javascript" src="/main.js?key={{jsonCacheInvalidatorKey}}"></script>
+  </head>
+
+<body>
+  <div class="headerSection">
+    <div class="logoSection">
+      <div class="logo">Medisa</div>
+      <div class="loadingIndicator">
+    <img src="/gears.gif" class="loadingSpinnerGIF" />
+      </div>
+    </div>
+    <div class="searchSection">
+      <div class="searchBar">
+    <i class="searchIcon fa fa-search fa-lg"></i>
+      <input class="searchInput" type="text" id="searchInput" placeholder="Search for media here..."></input>
+      </div>
+    </div>        
+  </div>
+
+  <div>
+    <ul class="results">
+  </div>
+
+  <div class="resultSection">
+    <div class="resultSubGroup resultSubGroupItunes">
+    <div class="subGroupTitle" id="itunesHere">
+        <img class="subGroupIcon" id="itunesIcon" src="./img/itunes-icon.jpg" />
+          iTunes
+    </div>
+    <div class="subGroupCards" id="itunesResults">
+    </div>
+    </div>
+
+    <div class="resultSubGroup resultSubGroupYouTube">
+    <div class="subGroupTitle" id="youtubeHere">
+      <img class="subGroupIcon" src="./img/youtube-icon.jpg" />
+          YouTube
+    </div>
+    <div class="subGroupCards" id="youtubeResults">
+    </div>
+    </div>
+  </div>
+
+  <div class="playerCover" hidden>
+    <div class="playerWrapper">    
+      <div class="youtubePlayerCloseButton">
+        <i class="fa fa-window-close fa-lg" aria-hidden="true"></i>
+      </div>    
+      <div class="youtubePlayer" id="youtubePlayerHere"></div>
+      <div class="itunesPlayer" id="itunesPlayerHere"></div>
+    </div>
+  </div>
+</body>
+</HTML>
