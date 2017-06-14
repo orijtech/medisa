@@ -1,0 +1,39 @@
+.search-input {
+  position:absolute;
+  z-index:999;
+  /* 
+   * Thanks to Stackoverflow http://stackoverflow.com/questions/27492559/float-search-bar-over-menu 
+   * for the above snippet to help with making an item's position float/stay absolute
+   */ 
+
+  /* Keep the width and height responsive */
+  width: 60.0vw;
+  height: 8.0vh;
+
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  padding: 1.0vw 0.5vw;
+  border: 1px solid #b7b7b7;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  font: normal 4.0vw "montserrat", Helvetica, sans-serif;
+  color: rgba(5,22,28,1);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: rgba(252,252,252,1);
+  -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) ;
+  box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) ;
+  -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+video {
+  position: relative;
+  width:100%;
+  max-width: 1.0vw;
+  height: auto;
+}
