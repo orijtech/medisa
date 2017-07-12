@@ -10,7 +10,6 @@ var resp = new Resp({
     console.log('encountered an error', err);
   },
   "services": {
-    "gifs": {},
     "youtube": {},
     "iTunes": {},
   }
@@ -153,12 +152,6 @@ function makeiTunesSnippet(data, result, indent) {
     '	  <div class="itunesInfoTitle" data-btn=\'{"id":' + result.track_id + '}\'>' + (result.track_censored_name || result.title) + '</div>',
     '	  <div class="itunesInfoArtist"><a href="' + result.artist_view_url + '" target="_blank">' + result.artist_name + '</a></div>',
   ] ;
-
-  if (result.collection_name) {
-    previewElementElement.push(
-    '	  <div class="itunesInfoTitle"><a href="' + result.collection_view_url + '" target="_blank">' + result.collection_name + '</a></div>'
-    );
-  }
 
   if (result.track_price && result.currency) {
     previewElementElement.push(
